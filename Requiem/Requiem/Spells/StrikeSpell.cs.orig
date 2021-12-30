@@ -1,0 +1,111 @@
+﻿using Engine.Math_Physics;
+using Microsoft.Xna.Framework;
+using Requiem.Entities;
+using Requiem.Entities.EntitySupport;
+using Requiem.Spells.Base;
+using Requiem.Spells.SpellEffects;
+using Engine.Drawing_Objects;
+using Requiem.Spells.RenderEffects;
+
+namespace Requiem.Spells
+{
+    /// <summary>close-range 'melee' spell</summary>
+    /// <author> Gabrial Dubois </author>
+<<<<<<< HEAD
+    public sealed class StrikeSpell : TouchSpell
+    {
+       /// <summary> Default constructor</summary>
+=======
+    class StrikeSpell : ProjectileSpell
+   {
+       /// <summary>
+       /// Default constructor 
+       /// </summary>
+>>>>>>> c5b9a3dd4b693be45ac65948892af7b09b29783d
+       /// <param name="owner">The entity owning the spell</param>
+        public StrikeSpell(Livable owner)
+            : base(owner) { }
+
+        /// <summary> Base initialize, must be called by the child class</summary>
+        public override void Initialize()
+        {
+            base.Initialize();
+
+            //xRange = 30;
+            //yRange = 50;
+            //zRange = 50;
+
+            coolDown = new Timer(manager.SceneManager.Game, 500);
+            coolDown.StartTimer();
+            manager.SceneManager.Game.Components.Add(coolDown);
+
+            //castingTimer = new Timer(manager.SceneManager.Game, 50);
+            //manager.SceneManager.Game.Components.Add(castingTimer);
+
+            icon = new Sprite();
+            icon.Initialize("Sprites/Strike", new Point(1, 1));
+
+            effects.Add(new DamageHealthEffect(this, 5));
+        }
+
+        /// <summary>Cast the spell</summary>
+        public override void Cast()
+        {
+            if (coolDown.TimesUp())
+            {
+                active = true;
+
+
+                //numOfExpired = -1;
+
+                //castingTimer.ResetTimer();
+                //castingTimer.StartTimer();
+
+                //if (owner.LookAt.X < 0)
+                //{
+                //    spellField = new OrientedBoundingBox(owner.WorldMatrix.Position,
+                //                        new Vector3(owner.WorldMatrix.Position.X - xRange, owner.WorldMatrix.Position.Y + yRange, owner.WorldMatrix.Position.Z + zRange));
+                //}
+                //else
+                //{
+                //    spellField = new OrientedBoundingBox(owner.WorldMatrix.Position,
+                //                        new Vector3(owner.WorldMatrix.Position.X + xRange, owner.WorldMatrix.Position.Y + yRange, owner.WorldMatrix.Position.Z + zRange));
+                //}
+
+                Projectile p = new Projectile(Owner.WorldMatrix.Position, Owner.LookAt, 7f, 100f, SpellRendererType.PROJ_FIREBALL);
+
+                WorldMatrix w = p.WorldMatrix;
+                Vector3 position = Owner.WorldMatrix.Position + new Vector3(0f, Owner.OBB.Dimensions.Y * 0.5f, 0f) + (Owner.LookAt * 500f);
+                p.movement = new Requiem.Movement.ProjectileArcMovement(ref w, position, 2000f, 50f);
+
+                p.Initialize(manager.ContentManager);
+                projectiles.Add(p);
+
+                if (!manager.ContainsSpell(this))
+                {
+                    manager.AddSpell(this);
+                }
+            }
+        }
+
+        /// <summary>Draw the visual component of the spell</summary>
+        public override void Draw()
+        {
+            //spellField.Render();
+        }
+
+        /// <summary>Executes the spell's effects if a collision is detected</summary>
+        /// <param name="target">The target to check</param>
+        /// <returns>True if a collision is detected false if not</returns>
+        public override bool CheckCollisions(Livable target)
+        {
+            if (base.CheckCollisions(target))
+            {
+                numOfExpired = 0;
+                return true;
+            }
+
+            return false;
+        }
+    }
+}

@@ -1,0 +1,157 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<EditorAssetList xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <assetList>
+    
+    <!-- These are your xsi:type options =
+    
+              -XSI:TYPE-                      -DESCRIPTION & FILEPATH - LOADING ELEMENTS-
+                 
+          StaticObject3D_Null               : static object with null material 
+                                            : <model>
+                                            
+          StaticObject3D_Diffuse            : static object with diffuse material
+                                            : <model>, <diffuse>
+                                            
+          StaticObject3D_NormalMap          : static object with normal mapped material
+                                            : <model>, <diffuse>, <normal>
+                                            
+          StaticObject3D_POM                : static object with parallax occlusion mapped material
+                                            : <model>, <diffuse>, <normal>
+                                            
+          StaticObject3D_Water              : static object with water material
+                                            : <model>, <refraction>, <skybox>
+                                            
+          AnimatedObject3D_Null             : animated object with null material
+                                            : <model>
+                                            
+          AnimatedObject3D_Diffuse          : animated object with diffuse material
+                                            : <model>, <diffuse>
+                                            
+          AnimatedObject3D_NormalMap        : animated object with normal mapped material
+                                            : <model>, <diffuse>, <normal>
+                                            
+          ParticleSystem_Smoke              : smoke particle system
+                                            : <texture>
+
+          PreFab                            : pre-fabricated Object3D objects
+                                            : <id>
+                                            
+          Quad3D_Texture                    : Quad Model with a alpha-mapped texture
+                                            : <texture>
+                                            
+          Platform_Null                     : Platform with Null material
+                                            : <model>, <behaviorType>
+                        
+          Platform_Diffuse                  : Platform with Diffuse material
+                                            : <model>, <behavior>, <diffuse>
+                            
+          Platform_NormalMap                : Pl_Patform with NormalMapped Material
+                                            : <model>, <behaviorType>, <diffuse>, <normal>
+                              
+          Platform_POM                      : Platform with POM Material
+                                            : <model>, <behavior>, <diffuse>, <normal>
+    -->
+
+    <EditorInput xsi:type="Quad3D_Texture">
+      <texture>textures//blackBlank</texture>
+    </EditorInput>
+
+    <EditorInput xsi:type="StaticObject3D_NormalMap">
+      <model>models//prop//door_prop</model>
+      <diffuse>textures//marble_diffuse_512</diffuse>
+      <normal>textures//marble_normal_512</normal>
+    </EditorInput>
+
+    <EditorInput xsi:type="StaticObject3D_POM">
+      <model>models//prop//Arch_prop</model>
+      <diffuse>textures//marble_diffuse_512</diffuse>
+      <normal>textures//marble_normal_512</normal>
+    </EditorInput>
+
+    <EditorInput xsi:type="StaticObject3D_NormalMap">
+      <model>models//bossRoom//model//tree</model>
+      <diffuse>models//bossRoom//texture//tree_diffuse</diffuse>
+      <normal>models//bossRoom//texture//tree_normal</normal>
+    </EditorInput>
+    
+    <EditorInput xsi:type="StaticObject3D_NormalMap">
+      <model>models//bossRoom//model//crate</model>
+      <diffuse>models//bossRoom//texture//crate_diffuse</diffuse>
+      <normal>models//bossRoom//texture//crate_normal</normal>
+    </EditorInput>
+    
+    <EditorInput xsi:type="Quad3D_Texture">
+      <texture>models//bossRoom//texture//persianCarpet2</texture>
+    </EditorInput>
+    
+    <EditorInput xsi:type="StaticObject3D_Null">
+      <model>models//prop//Torch_prop</model>
+    </EditorInput>
+    
+    <EditorInput xsi:type="StaticObject3D_Water">
+      <model>models//boxn</model>
+      <refraction>noisemaps//waves</refraction>
+      <skybox>skybox//Cubemap_LostValley_512</skybox>
+    </EditorInput>
+   
+    <EditorInput xsi:type="StaticObject3D_Diffuse">
+      <model>models//bossRoom//model//column_broken</model>
+      <diffuse>models//bossRoom//texture//marble_diffuse</diffuse>
+    </EditorInput>
+
+    <EditorInput xsi:type="StaticObject3D_Diffuse">
+      <model>models//bossRoom//model//columnTall</model>
+      <diffuse>models//bossRoom//texture//marble_diffuse</diffuse>
+    </EditorInput>
+
+    <EditorInput xsi:type="StaticObject3D_Diffuse">
+      <model>models//bossRoom//model//upper_level</model>
+      <diffuse>models//bossRoom//texture//marble_diffuse</diffuse>
+    </EditorInput>
+
+    <EditorInput xsi:type="StaticObject3D_Null">
+      <model>models//prop//PowerUp_spawn_prop</model>
+    </EditorInput>
+
+    <EditorInput xsi:type="StaticObject3D_NormalMap">
+      <model>models//prop//Bridge_end_prop</model>
+      <diffuse>textures//wood_diffuse</diffuse>
+      <normal>textures//wood_normal</normal>
+    </EditorInput>
+
+    <EditorInput xsi:type="StaticObject3D_Null">
+      <model>models//prop//Chain_prop</model>
+    </EditorInput>
+
+    <EditorInput xsi:type="StaticObject3D_Null">
+      <model>models//hebe</model>
+    </EditorInput>
+
+    <EditorInput xsi:type="StaticObject3D_Null">
+      <model>models//prop//rail_prop</model>
+    </EditorInput>
+
+    <EditorInput xsi:type="StaticObject3D_POM">
+      <model>models//boxn</model>
+      <diffuse>textures//bricks_diffuse</diffuse>
+      <normal>textures//bricks_normal</normal>
+    </EditorInput>
+
+    <EditorInput xsi:type="StaticObject3D_Null">
+      <model>models//prop//brazier_prop</model>
+    </EditorInput>
+    
+    <EditorInput xsi:type="StaticObject3D_Null">
+      <model>models//prop//standing_torch_prop</model>
+    </EditorInput>
+
+    <EditorInput xsi:type="PreFab">
+      <id>601</id>
+    </EditorInput>
+
+    <EditorInput xsi:type="StaticObject3D_Null">
+      <model>models//bossRoom//model//water_spit</model>
+    </EditorInput>
+         
+  </assetList>
+</EditorAssetList>
